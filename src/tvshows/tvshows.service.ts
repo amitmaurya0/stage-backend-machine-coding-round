@@ -17,6 +17,10 @@ export class TVShowsService {
     return this.tvShowModel.find().exec();
   }
 
+  async findByIds(ids: string[]): Promise<TVShow[]> {
+    return this.tvShowModel.find().where('_id').in(ids).exec();
+  }
+
   async create(createTVShowDto: CreateTVshowDto): Promise<TVShow> {
     const createdTVShow = new this.tvShowModel(createTVShowDto);
     return createdTVShow.save();

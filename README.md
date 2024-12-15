@@ -65,56 +65,12 @@ You can use the following existing endpoints to interact with movies and TV show
 - POST /tvshows: Adds a TV show.
 Note: These endpoints are already implemented and should function correctly. Feel free to review and improve them where necessary.
 
-## Evaluation Criteria
-You will be evaluated based on the following aspects:
+### Changes
 
-### 1. Code Quality
-Readability: Code should be easy to read and understand. Use meaningful variable and function names, appropriate abstractions, and comments where necessary.
-Structure: Follow NestJS best practices in terms of module and service organization. Adhere to SOLID principles and ensure that each class, function, and file has a clear responsibility.
-DRY (Don't Repeat Yourself): Avoid code duplication. Look for ways to reuse existing logic where applicable.
-### 2. Error Handling and Validation
-Proper error handling should be in place for both synchronous and asynchronous operations. Use appropriate HTTP status codes for different error scenarios (e.g., 404 for not found, 400 for bad requests).
-Data validation should be comprehensive, with clear error messages returned for invalid inputs (e.g., missing required fields or incorrect data types).
-### 3. Testing
-Implement unit tests for critical components, especially the "My List" feature.
-Add integration tests for the new API endpoints.
-Test coverage should be meaningful, and the test suite should be easy to run (npm run test).
-### 4. Performance Optimization
-Ensure that database queries are optimized and do not introduce performance bottlenecks, especially in the "My List" feature, where users may have large lists.
-Look for opportunities to optimize code where applicable (e.g., using indexes for database queries).
-### 5. Best Practices
-Follow NestJS conventions for dependency injection, services, and controllers.
-Use environment variables and proper configuration management (e.g., database credentials, environment-specific settings).
-Adhere to RESTful API best practices in your implementation (e.g., using appropriate HTTP methods, status codes, and resource naming conventions).
-### 6. Code Formatting and Linting
-Ensure that the code is consistently formatted and follows a coding style guide. Prettier and ESLint are included in the project setup, and you should ensure there are no linting errors:
-
-```bash
-npm run lint
-npm run format
-```
-
-Follow naming conventions for files, variables, and classes in the project.
-### 7. Git Usage
-Use meaningful commit messages that clearly describe the changes you've made.
-Keep your commit history clean and logical. Avoid including unnecessary or temporary files in your commits.
-Create a branch for your changes and submit a pull request for review.
-### 8. Documentation
-Update the Swagger documentation to reflect any new endpoints or changes.
-Ensure your code is well-documented with appropriate inline comments where necessary, especially for complex logic.
-Briefly explain your approach in the pull request description or commit messages.
-### 9. Additional Improvements
-Feel free to make suggestions or implement additional improvements that you believe will add value to the project. For example, caching frequently requested data, optimizing database indexing, or refactoring existing code.
-
-## Submission
-Once you have completed your work, push your changes to a new branch and submit a pull request. In your pull request description, include:
-
-A brief overview of the changes you made.
-Any challenges you faced and how you overcame them.
-A description of any additional improvements or optimizations you made.
-
-Good Luck!
-
-Feel free to reach out if you have any questions or need clarification on the requirements. We're looking forward to reviewing your submission and evaluating how you tackle this task!
+- GET /list (Added this api with userId int the headers the support of pagination where we need to add only page number for pagination).
+- POST /list (Added this api with payload of movieOrShowId and type is movie or tvshow and userId in the header so that each user have their own list).
+- DELETE /list/:showOrMovieId  ( Added this api for deleting the list item with the usedId in the header showOrMovieId as params)
+- 
+### some changes made for the user module and seeder was not working properly 
 
 

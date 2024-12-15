@@ -14,6 +14,10 @@ export class MoviesService {
     return this.movieModel.find().exec();
   }
 
+  async findByIds(ids: string[]): Promise<Movie[]> {
+    return this.movieModel.find().where('_id').in(ids).exec();
+  }
+
   async create(createMovieDto: CreateMovieDto): Promise<Movie> {
     const createdMovie = new this.movieModel(createMovieDto);
     return createdMovie.save();

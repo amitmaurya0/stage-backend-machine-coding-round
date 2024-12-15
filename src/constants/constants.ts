@@ -14,3 +14,10 @@ export const genre = [
   'Biography',
   'History',
 ];
+
+export const PER_PAGE_LIMIT = 10;
+
+export const LIST_TYPES = {
+  MOVIES: 'movie',
+  TVSHOW: 'tvshow'
+}
